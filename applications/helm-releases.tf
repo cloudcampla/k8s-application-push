@@ -1,6 +1,6 @@
-resource "helm_release" "prometheus" {
-  name       = "monitoring-cloudcamp"
-  repository = "https://prometheus-community.github.io/helm-charts"
-  chart      = "kube-prometheus-stack"
-  version    = "59.1.0"
+resource "helm_release" "redis" {
+  name       = "redis-cloudcamp"
+  repository = "https://charts.bitnami.com/bitnami"
+  chart      = "redis"
+  version    = "6.0.1"
 }
