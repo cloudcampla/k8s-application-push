@@ -53,7 +53,7 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        id: plan
+        id: apply
         run: terraform apply -no-color -auto-approve
         continue-on-error: true
 
