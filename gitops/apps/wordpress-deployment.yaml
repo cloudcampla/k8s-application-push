@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress-gitops-deployment
+  labels:
+    app: wordpress-gitops
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: wordpress-gitops
+  template:
+    metadata:
+      labels:
+        app: wordpress-gitops
+    spec:
+      containers:
+      - name: wordpress-gitops
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
