@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-gitops-deployment
+  labels:
+    app: app-gitops
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-gitops
+  template:
+    metadata:
+      labels:
+        app: app-gitops
+    spec:
+      containers:
+      - name: app-gitops
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
