@@ -5,7 +5,7 @@ metadata:
   labels:
     app: wordpress-gitops
 spec:
-  replicas: 5
+  replicas: 7
   selector:
     matchLabels:
       app: wordpress-gitops
