@@ -28,7 +28,7 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v5.1.0
         with:
-          role-to-assume: arn:aws:iam::244190102671:role/k8s-application-push-github-role #change to reflect your IAM role’s ARN
+          role-to-assume: arn:aws:iam::575536455975:role/eks-github-action-role #change to reflect your IAM role’s ARN
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
       - uses: hashicorp/setup-terraform@v3
