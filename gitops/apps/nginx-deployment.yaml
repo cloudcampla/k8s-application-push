@@ -4,8 +4,9 @@ metadata:
   name: app-gitops-deployment
   labels:
     app: app-gitops
+    environment: dev
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: app-gitops
@@ -13,9 +14,10 @@ spec:
     metadata:
       labels:
         app: app-gitops
+        environment: dev
     spec:
       containers:
       - name: app-gitops
-        image: nginx:1.14.2
+        image: nginx:latest
         ports:
         - containerPort: 80
