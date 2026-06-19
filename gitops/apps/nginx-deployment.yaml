@@ -4,7 +4,7 @@ metadata:
   name: app-gitops-deployment
   labels:
     app: app-gitops
-    environment: dev
+    environment: dev2
 spec:
   replicas: 5
   selector:
