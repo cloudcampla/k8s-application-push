@@ -4,16 +4,16 @@ name: Apply terraform resources main
 # Controls when the action will run. Invokes the workflow on push events but only for the main branch
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 env:
-  AWS_REGION : "us-east-1" #Change to reflect your Region
+  AWS_REGION: "us-east-1" #Change to reflect your Region
   TF_WORK_DIRECTORY: "applications"
 
-# Permission can be added at job level or workflow level    
+# Permission can be added at job level or workflow level
 permissions:
-  id-token: write   # This is required for requesting the JWT
-  contents: read    # This is required for actions/checkout
+  id-token: write # This is required for requesting the JWT
+  contents: read # This is required for actions/checkout
   pull-requests: write
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v5.1.0
         with:
-          role-to-assume: arn:aws:iam::921292479940:role/eks-ci-role #change to reflect your IAM role’s ARN
+          role-to-assume: arn:aws:iam::948285518339:role/eks-ci-role #change to reflect your IAM role’s ARN
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
       - uses: hashicorp/setup-terraform@v3
@@ -56,6 +56,3 @@ jobs:
         id: apply
         run: terraform apply -no-color -auto-approve
         continue-on-error: true
-
-
-
