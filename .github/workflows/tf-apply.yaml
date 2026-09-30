@@ -28,7 +28,7 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v5.1.0
         with:
-          role-to-assume: arn:aws:iam::948285518339:role/eks-ci-role #change to reflect your IAM role’s ARN
+          role-to-assume: arn:aws:iam::314567760063:role/eks-ci-role #change to reflect your IAM role’s ARN
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
       - uses: hashicorp/setup-terraform@v3
