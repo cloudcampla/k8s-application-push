@@ -5,7 +5,7 @@ metadata:
   labels:
     app: wordpress-gitops
 spec:
-  replicas: 7
+  replicas: 2
   selector:
     matchLabels:
       app: wordpress-gitops
@@ -15,7 +15,7 @@ spec:
         app: wordpress-gitops
     spec:
       containers:
-      - name: wordpress-gitops
-        image: nginx:1.14.2
-        ports:
-        - containerPort: 80
+        - name: wordpress-gitops
+          image: nginx:alpine
+          ports:
+            - containerPort: 80
